@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="NeoPixelsDriver" version="2.9.0.208">
+    <desc><![CDATA[Driver for NeoPixels (WS2812)]]></desc>
+    <pattr name="Apply default power mode">0</pattr>
+    <pattr name="Board">CC26X2R1 LaunchPad</pattr>
+    <pattr name="Chip name">CC2642R1F</pattr>
+    <pattr name="Chip package">QFN48 7x7 RGZ</pattr>
+    <pattr name="Chip revision">E</pattr>
+    <pattr name="Clock in active mode">0</pattr>
+    <pattr name="Code prefix">NeoPixels</pattr>
+    <pattr name="Default power mode">0</pattr>
+    <pattr name="Operating system">TI-RTOS</pattr>
+    <pattr name="Output directory">C:/Users/a0132664/Documents/PERSONNAL/PROJETS/SensorController_NeoPixels/CC2642R1</pattr>
+    <pattr name="RTC tick interval (16.16 format)">2000</pattr>
+    <pattr name="Run-time logging UART RX pin"></pattr>
+    <pattr name="Run-time logging UART TX pin"></pattr>
+    <task name="NeoPixelsTask">
+        <desc><![CDATA[]]></desc>
+        <tattr name="RES_CT" desc="Reset, low voltage time (given in number of 24MHz clock ticks) - corresponds to 55us (per data-sheet the value must be above 50us)" type="expr" content="const" scope="task" min="0" max="65535">1320</tattr>
+        <tattr name="TABLE_STATE_LENGTH" desc="Number of elements stored in the NeoPixels table state (each color requires 2 elements to be stored)" type="expr" content="const" scope="task" min="0" max="65535">150</tattr>
+        <tattr name="input.NeoPixelsTableState" desc="Table holding the NeoPixels state " size="TABLE_STATE_LENGTH" type="expr" content="struct_array" scope="task" min="0" max="65535">0</tattr>
+        <resource_ref name="ADC" enabled="0"/>
+        <resource_ref name="AON Domain Functionality" enabled="0"/>
+        <resource_ref name="Accumulator-Based Math" enabled="0"/>
+        <resource_ref name="Analog Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Analog Open-Source Pins" enabled="0"/>
+        <resource_ref name="Analog Pins" enabled="0"/>
+        <resource_ref name="COMPA" enabled="0"/>
+        <resource_ref name="COMPA Event Trigger" enabled="0"/>
+        <resource_ref name="COMPB" enabled="0"/>
+        <resource_ref name="COMPB Event Trigger" enabled="0"/>
+        <resource_ref name="Delay Insertion" enabled="0"/>
+        <resource_ref name="Differential Output Pins" enabled="0"/>
+        <resource_ref name="Digital Input Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Source Pins" enabled="0"/>
+        <resource_ref name="Digital Output Pins" enabled="1">
+            <io_usage name="NeoPixelsPin" label="Pin connected to the control signal">
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Output drive strength">0</uattr>
+                <uattr name="Output value on initialization">0</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO10</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+                <uattr name="Pin/0016"></uattr>
+                <uattr name="Pin/0017"></uattr>
+                <uattr name="Pin/0018"></uattr>
+                <uattr name="Pin/0019"></uattr>
+                <uattr name="Pin/0020"></uattr>
+                <uattr name="Pin/0021"></uattr>
+                <uattr name="Pin/0022"></uattr>
+                <uattr name="Pin/0023"></uattr>
+                <uattr name="Pin/0024"></uattr>
+                <uattr name="Pin/0025"></uattr>
+                <uattr name="Pin/0026"></uattr>
+                <uattr name="Pin/0027"></uattr>
+                <uattr name="Pin/0028"></uattr>
+                <uattr name="Pin/0029"></uattr>
+                <uattr name="Pin/0030"></uattr>
+                <uattr name="Pin/0031"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="Dynamic Power Control" enabled="0"/>
+        <resource_ref name="GPIO Event Trigger" enabled="0"/>
+        <resource_ref name="I2C Master" enabled="0">
+            <rattr name="SCL frequency">0</rattr>
+            <rattr name="SCL stretch timeout">1</rattr>
+            <io_usage>
+                <uattr name="Output drive strength">1</uattr>
+                <uattr name="SCL pin/0000"></uattr>
+                <uattr name="SDA pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="ISRC" enabled="0"/>
+        <resource_ref name="LCD Controller" enabled="0">
+            <rattr name="Waveform state count">8</rattr>
+            <io_usage>
+                <uattr name="Output drive strength">0</uattr>
+                <uattr name="Pin count">20</uattr>
+                <uattr name="Pin/0000"></uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+                <uattr name="Pin/0016"></uattr>
+                <uattr name="Pin/0017"></uattr>
+                <uattr name="Pin/0018"></uattr>
+                <uattr name="Pin/0019"></uattr>
+                <uattr name="Pin/0020"></uattr>
+                <uattr name="Pin/0021"></uattr>
+                <uattr name="Pin/0022"></uattr>
+                <uattr name="Pin/0023"></uattr>
+                <uattr name="Pin/0024"></uattr>
+                <uattr name="Pin/0025"></uattr>
+                <uattr name="Pin/0026"></uattr>
+                <uattr name="Pin/0027"></uattr>
+                <uattr name="Pin/0028"></uattr>
+                <uattr name="Pin/0029"></uattr>
+                <uattr name="Pin/0030"></uattr>
+                <uattr name="Pin/0031"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="Math and Logic" enabled="0"/>
+        <resource_ref name="Multi-Buffered Output Data Exchange" enabled="0">
+            <rattr name="Buffer count">2</rattr>
+            <rattr name="Indicate overflow at buffer check">1</rattr>
+            <rattr name="Indicate overflow at buffer switch">0</rattr>
+            <rattr name="Prevent overflow at buffer switch">1</rattr>
+        </resource_ref>
+        <resource_ref name="Peripheral Sharing" enabled="0"/>
+        <resource_ref name="Pulse Counter" enabled="0"/>
+        <resource_ref name="RTC Multi-Event Capture" enabled="0"/>
+        <resource_ref name="RTC-Based Execution Scheduling" enabled="1"/>
+        <resource_ref name="Reference DAC" enabled="0"/>
+        <resource_ref name="Run-Time Logging" enabled="0"/>
+        <resource_ref name="SPI Chip Select" enabled="0"/>
+        <resource_ref name="SPI Data Transfer" enabled="0">
+            <rattr name="Bit rate">0</rattr>
+            <rattr name="MISO configuration when inactive">-1</rattr>
+            <rattr name="MOSI configuration on initialization">0</rattr>
+            <rattr name="MOSI configuration on uninitialization">0</rattr>
+            <rattr name="SCLK configuration on initialization">0</rattr>
+            <rattr name="SCLK configuration on uninitialization">0</rattr>
+            <io_usage>
+                <uattr name="MISO pin/0000"></uattr>
+                <uattr name="MOSI pin/0000"></uattr>
+                <uattr name="SCLK pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="Signal Observation" enabled="0"/>
+        <resource_ref name="System CPU Alert" enabled="0"/>
+        <resource_ref name="System Event Trigger" enabled="0"/>
+        <resource_ref name="TDC" enabled="0"/>
+        <resource_ref name="Timer 0" enabled="1"/>
+        <resource_ref name="Timer 0 Event Trigger" enabled="0"/>
+        <resource_ref name="Timer 1" enabled="0"/>
+        <resource_ref name="Timer 1 Event Trigger" enabled="0"/>
+        <resource_ref name="Timer 2" enabled="0"/>
+        <resource_ref name="Timer 2 Event Trigger" enabled="0"/>
+        <resource_ref name="UART Emulator" enabled="0">
+            <rattr name="RX buffer size">64</rattr>
+            <rattr name="Required idle period before enabling RX">11</rattr>
+            <rattr name="TX buffer size">64</rattr>
+            <io_usage>
+                <uattr name="RX pin/0000"></uattr>
+                <uattr name="TX pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <sccode name="event0" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="event1" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="event2" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="event3" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="execute" init_power_mode="0"><![CDATA[macro send_zero(){
+
+    // The timing is too short in coparison with the overhead brought
+    // by a timer. As a result we cheat a bit...
+
+    // T0H = 0.35us
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+
+    // T0L = 0.80us
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+}
+
+macro send_one(){
+
+    // The timing is too short in coparison with the overhead brought
+    // by a timer. As a result we cheat a bit...
+
+    // T1H = 0.70us
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioSetOutput(AUXIO_O_NEO_PIXELS_PIN);
+
+    // T1L = 0.60us
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+
+}
+
+macro send_reset(){
+
+    gpioClearOutput(AUXIO_O_NEO_PIXELS_PIN);
+    timer0Start(TIMER0_MODE_SINGLE, RES_CT, 0);
+    timer0Wait();
+}
+
+macro send_bit(value){
+
+    if (value) {
+        send_one();
+    } else {
+        send_zero();
+    }
+}
+
+macro send_color_low(color){
+
+    // Sending RED
+    U16 mask = 1 << 7;
+    send_bit(color & mask); // bit 7
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 6
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 5
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 4
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 3
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 2
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 1
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 0
+
+
+    // Sending GREEN
+    mask = 1 << 15;
+    send_bit(color & mask); // bit 15
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 14
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 13
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 12
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 11
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 10
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 9
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 8
+}
+
+macro send_color_high(color){
+
+    // Sending BLUE
+    U16 mask = 1 << 7;
+    send_bit(color & mask); // bit 7
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 6
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 5
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 4
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 3
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 2
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 1
+
+    mask = mask >> 1;
+    send_bit(color & mask); // bit 0
+}
+
+U16 n = 0;
+while(n < TABLE_STATE_LENGTH){
+
+    send_color_low(input.NeoPixelsTableState[n]); //red(256-65280) - green(0-255)
+    n = n+1;
+
+    send_color_high(input.NeoPixelsTableState[n]); //blue (0-255)
+    n = n+1;
+}
+
+send_reset();]]></sccode>
+        <sccode name="initialize" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="terminate" init_power_mode="0"><![CDATA[]]></sccode>
+        <event_trigger active_count="1">0,1,2,3</event_trigger>
+        <tt_iter>run_execute</tt_iter>
+        <tt_struct></tt_struct>
+        <rtl_struct></rtl_struct>
+        <rtl_task_sel en="1" struct_log_list="output"/>
+    </task>
+</project>

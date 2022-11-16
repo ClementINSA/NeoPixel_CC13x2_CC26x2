@@ -25,5 +25,6 @@ void NeoPixelEffect_fadeToBlack(uint16_t ledNo, uint8_t fadeValue);
 void NeoPixelEffect_meteorRain(uint8_t r, uint8_t g, uint8_t b,
                                uint8_t meteorSize, uint8_t meteorTrailDecay, bool meteorRandomDecay, int SpeedDelay);
 void NeoPixelEffect_colorWheel(uint8_t WheelPos, uint8_t *r, uint8_t *g, uint8_t *b);
+void NeoPixelEffect_rainbowCycle(int SpeedDelay);
 
 #endif /* NEOPIXELEFFECT_H_ */

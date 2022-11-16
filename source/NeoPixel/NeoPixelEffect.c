@@ -127,6 +127,18 @@ void NeoPixelEffect_rainbowCycle(int SpeedDelay) {
   }
 }
 
+/* usage:
+ * NeoPixelEffect_sparkle(255, 255, 255, 50);
+ */
+void NeoPixelEffect_sparkle(uint8_t r, uint8_t g, uint8_t b, int SpeedDelay) {
+
+  int i = random(0, NUMBER_OF_LEDS);
+  NeoPixel_setPixelColor(i,r,g,b);
+  NeoPixel_show();
+  usleep(SpeedDelay * 1000);
+  NeoPixel_setPixelColor(i,0,0,0); // switch off for next time (but don't display)
+}
+
 /* Input a value 0 to 255 to get a color value.
  * The colours are a transition r - g - b - back to r.
  */

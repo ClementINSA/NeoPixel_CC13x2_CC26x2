@@ -27,7 +27,7 @@ static uint32_t random(uint32_t min, uint32_t max){
 
 /* Usage:
  * NeoPixelEffect_strobe(0xff, 0xff, 0xff, 10, 50, 0, 10);
- * // Can't be used at 5V with 30 leds
+ * /!\ Can't be used at 5V with 30 leds
  */
 void NeoPixelEffect_strobe(uint8_t r, uint8_t g, uint8_t b, uint16_t StrobeCount, uint16_t FlashDelay, uint16_t ledFirst, uint16_t ledCount){
 
@@ -108,8 +108,28 @@ void NeoPixelEffect_meteorRain(uint8_t r, uint8_t g, uint8_t b,
     NeoPixel_show();
 }
 
-// Input a value 0 to 255 to get a color value.
-// The colours are a transition r - g - b - back to r.
+/* Usage:
+ * NeoPixelEffect_rainbowCycle(10);
+ * Each call makes the LEDs to display one cycle (256 colors)
+ */
+void NeoPixelEffect_rainbowCycle(int SpeedDelay) {
+
+  uint8_t r, g, b;
+  uint16_t i, j;
+
+  for(j=0; j<256; j++) {
+    for(i=0; i< NUMBER_OF_LEDS; i++) {
+      NeoPixelEffect_colorWheel(((i * 256 / NUMBER_OF_LEDS) + j) & 255, &r, &g, &b);
+      NeoPixel_setPixelColor(i, r, g, b);
+    }
+    NeoPixel_show();
+    usleep(SpeedDelay * 1000);
+  }
+}
+
+/* Input a value 0 to 255 to get a color value.
+ * The colours are a transition r - g - b - back to r.
+ */
 void NeoPixelEffect_colorWheel(uint8_t WheelPos, uint8_t *r, uint8_t *g, uint8_t *b) {
 
     WheelPos = 255 - WheelPos;
